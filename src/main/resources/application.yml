@@ -1,9 +1,13 @@
 server:
   port: 8761
-
+  http2:
+    enabled: true
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+#    enabled: false
   instance:
     hostname: ${EUREKA_HOSTNAME:localhost}
+  server:
+    eviction-interval-timer-in-ms: 1000
